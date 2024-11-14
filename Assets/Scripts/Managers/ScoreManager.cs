@@ -50,13 +50,13 @@ public class ScoreManager : MonoBehaviour
         {
             currentScore += matchScore * scoreComboMultiplier;
             UpdateScoreText();
-            
+
             currComboCount++;
             if (currComboCount > totalComboCount)
             {
                 totalComboCount = currComboCount;
             }
-
+            AudioManager.instance.PlaySFX($"Combo{currComboCount}");
             UpdateTotalComboText();
             return;
         }

@@ -27,6 +27,8 @@ public class GameCard : MonoBehaviour
     {
         isFlipped = !isFlipped;
 
+        AudioManager.instance.PlaySFX("CardFlip");
+
         if (isFlipped)
         {
             ShowCard();

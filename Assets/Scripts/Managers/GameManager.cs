@@ -24,6 +24,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        AudioManager.instance.PlayMusic("GameMusic");
+    }
+
     public void AddCardClickedToList(GameCard _clickedCard)
     {
         if (_clickedCard.GetIsFlipped())
@@ -59,10 +64,12 @@ public class GameManager : MonoBehaviour
             }
             ScoreManager.instance.AddScore(isCombo);
             isCombo = true;
+            AudioManager.instance.PlaySFX("CardMatch");
             return;
         }
 
         isCombo = false;
+        AudioManager.instance.PlaySFX("WrongMatch");
         StartCoroutine(UndoCardFlip());
     }
 

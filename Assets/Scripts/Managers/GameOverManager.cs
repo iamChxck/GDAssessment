@@ -23,6 +23,8 @@ public class GameOverManager : MonoBehaviour
 
     public void LoadMainMenu()
     {
+        AudioManager.instance.StopMusic();
+        AudioManager.instance.PlaySFX("ButtonClick");
         SceneManager.LoadScene("MainMenu");
     }
 }
