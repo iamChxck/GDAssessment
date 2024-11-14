@@ -29,14 +29,25 @@ public class GameCard : MonoBehaviour
 
         if (isFlipped)
         {
-            SetSprite(frontSprite);
+            ShowCard();
             GameManager.instance.AddCardClickedToList(this);
             return;
         }
 
-        SetSprite(backSprite);
+        HideCard();
         GameManager.instance.RemoveCardClickedFromList(this);
     }
+
+    public void ShowCard()
+    {
+        SetSprite(frontSprite);
+    }
+
+    public void HideCard()
+    {
+        SetSprite(backSprite);
+    }
+
 
     private void SetSprite(Sprite _sprite)
     {
@@ -59,8 +70,8 @@ public class GameCard : MonoBehaviour
     }
 
     public void SetIsMatchedToTrue()
-    { 
-        isMatched = true; 
+    {
+        isMatched = true;
     }
 
     public bool IsMatched()

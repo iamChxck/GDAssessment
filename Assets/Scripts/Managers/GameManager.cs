@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     List<GameCard> clickedCards = new List<GameCard>();
 
+    bool isCombo = false;
+
     private void Awake()
     {
         if (instance == null)
@@ -18,11 +20,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void AddCardClickedToList(GameCard clickedCard)
+    public void AddCardClickedToList(GameCard _clickedCard)
     {
-        if (clickedCard.GetIsFlipped())
+        if (_clickedCard.GetIsFlipped())
         {
-            clickedCards.Add(clickedCard);
+            clickedCards.Add(_clickedCard);
         }
 
         if (clickedCards.Count == 2)
@@ -33,13 +35,13 @@ public class GameManager : MonoBehaviour
         if (clickedCards.Count > 2)
         {
             clickedCards.Clear();
-            clickedCards.Add(clickedCard);
+            clickedCards.Add(_clickedCard);
         }
     }
 
-    public void RemoveCardClickedFromList(GameCard clickedCard)
+    public void RemoveCardClickedFromList(GameCard _clickedCard)
     {
-        clickedCards.Remove(clickedCard);
+        clickedCards.Remove(_clickedCard);
     }
 
     void CheckIfCardsMatched()
@@ -51,9 +53,12 @@ public class GameManager : MonoBehaviour
                 card.SetIsMatchedToTrue();
                 card.DisableCard();
             }
+            ScoreManager.instance.AddScore(isCombo);
+            isCombo = true;
             return;
         }
 
+        isCombo = false;
         StartCoroutine(UndoCardFlip());
     }
 

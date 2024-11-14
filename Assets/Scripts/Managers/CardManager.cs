@@ -4,24 +4,36 @@ using UnityEngine;
 
 public class CardManager : MonoBehaviour
 {
-    GameObject[] cards;
+    public static CardManager instance;
+
+    public GameObject[] cards;
 
     int possiblePermutations = 0;
 
     [SerializeField]
+    GameObject panelCover;
+
+    [SerializeField]
     List<Card> cardSymbols;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
         cards = GameObject.FindGameObjectsWithTag("Card");
         GeneratePossiblePermutations();
         AssignCardValues();
+
+        StartCoroutine(ShowCardsAtTheStartOfGame());
     }
 
     void GeneratePossiblePermutations()
     {
         possiblePermutations = cards.Length / 2;
-        for(int i = 0; i < possiblePermutations; i++)
+        for (int i = 0; i < possiblePermutations; i++)
         {
             cardSymbols.Add(CardGenerator.instance.GenerateCard());
         }
@@ -56,5 +68,23 @@ public class CardManager : MonoBehaviour
             list[i] = list[randomIndex];
             list[randomIndex] = temp;
         }
+    }
+
+    public IEnumerator ShowCardsAtTheStartOfGame()
+    {
+        foreach (GameObject card in CardManager.instance.cards)
+        {
+            card.GetComponent<GameCard>().ShowCard();
+            Debug.Log(card.GetComponent<GameCard>().GetSymbolName());
+        }
+
+        yield return new WaitForSeconds(2f);
+
+        foreach (GameObject card in CardManager.instance.cards)
+        {
+            card.GetComponent<GameCard>().HideCard();
+        }
+
+        panelCover.SetActive(false);
     }
 }
