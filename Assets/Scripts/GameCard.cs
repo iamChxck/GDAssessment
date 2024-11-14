@@ -10,6 +10,7 @@ public class GameCard : MonoBehaviour
     string symbolName;
     Sprite frontSprite;
     bool isFlipped = false;
+    bool isMatched = false;
 
     Image image;
 
@@ -26,17 +27,17 @@ public class GameCard : MonoBehaviour
     {
         isFlipped = !isFlipped;
 
-        if(isFlipped)
+        if (isFlipped)
         {
             SetSprite(frontSprite);
+            GameManager.instance.AddCardClickedToList(this);
             return;
         }
 
         SetSprite(backSprite);
-
-        Debug.Log(symbolName);
+        GameManager.instance.RemoveCardClickedFromList(this);
     }
-    
+
     private void SetSprite(Sprite _sprite)
     {
         image.sprite = _sprite;
@@ -47,8 +48,33 @@ public class GameCard : MonoBehaviour
         symbolName = _symbolName;
     }
 
+    public string GetSymbolName()
+    {
+        return symbolName;
+    }
+
     public void SetFrontSprite(Sprite _frontSprite)
     {
         frontSprite = _frontSprite;
+    }
+
+    public void SetIsMatchedToTrue()
+    { 
+        isMatched = true; 
+    }
+
+    public bool IsMatched()
+    {
+        return isMatched;
+    }
+
+    public bool GetIsFlipped()
+    {
+        return isFlipped;
+    }
+
+    public void DisableCard()
+    {
+        cardButton.interactable = false;
     }
 }
