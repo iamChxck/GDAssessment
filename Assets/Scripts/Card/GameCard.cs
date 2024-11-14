@@ -8,7 +8,7 @@ public class GameCard : MonoBehaviour
     public Sprite backSprite;
 
     string symbolName;
-    Sprite frontSprite;
+    public Sprite frontSprite;
     bool isFlipped = false;
     bool isMatched = false;
 
@@ -16,7 +16,7 @@ public class GameCard : MonoBehaviour
 
     Button cardButton;
 
-    private void Start()
+    private void Awake()
     {
         image = GetComponent<Image>();
         cardButton = GetComponent<Button>();

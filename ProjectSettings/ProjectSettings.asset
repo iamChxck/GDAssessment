@@ -158,6 +158,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
+    Android: SINOGames.GDAssessment.com
     Standalone: com.DefaultCompany.2DProject
   buildNumber:
     Standalone: 0
@@ -769,7 +770,7 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 0
+  activeInputHandler: 1
   windowsGamepadBackendHint: 0
   cloudProjectId: b9c9b9bf-369f-499f-8767-2cf8252db8d7
   framebufferDepthMemorylessMode: 0

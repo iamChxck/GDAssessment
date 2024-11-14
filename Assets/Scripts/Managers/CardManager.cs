@@ -72,14 +72,14 @@ public class CardManager : MonoBehaviour
 
     public IEnumerator ShowCardsAtTheStartOfGame()
     {
-        foreach (GameObject card in CardManager.instance.cards)
+        foreach (GameObject card in cards)
         {
             card.GetComponent<GameCard>().ShowCard();
         }
 
         yield return new WaitForSeconds(2f);
 
-        foreach (GameObject card in CardManager.instance.cards)
+        foreach (GameObject card in cards)
         {
             card.GetComponent<GameCard>().HideCard();
         }
