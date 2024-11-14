@@ -74,7 +74,7 @@ public class GameCard : MonoBehaviour
         isMatched = true;
     }
 
-    public bool IsMatched()
+    public bool GetIsMatched()
     {
         return isMatched;
     }

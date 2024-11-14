@@ -75,7 +75,6 @@ public class CardManager : MonoBehaviour
         foreach (GameObject card in CardManager.instance.cards)
         {
             card.GetComponent<GameCard>().ShowCard();
-            Debug.Log(card.GetComponent<GameCard>().GetSymbolName());
         }
 
         yield return new WaitForSeconds(2f);

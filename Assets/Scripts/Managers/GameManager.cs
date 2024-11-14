@@ -9,8 +9,12 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     List<GameCard> clickedCards = new List<GameCard>();
+    [SerializeField]
+    GameObject gameOverManagerObj;
 
     bool isCombo = false;
+
+    bool isGameOver = false;
 
     private void Awake()
     {
@@ -71,6 +75,28 @@ public class GameManager : MonoBehaviour
         foreach (GameCard card in tempCards)
         {
             card.FlipCard();
+        }
+    }
+
+    private void Update()
+    {
+        CheckIfAllCardsAreMatched();
+
+        if(isGameOver == true)
+        {
+            gameOverManagerObj.SetActive(true);
+        }
+    }
+
+    void CheckIfAllCardsAreMatched()
+    {
+        isGameOver = true;
+        foreach(GameObject card in CardManager.instance.cards)
+        {
+            if(card.GetComponent<GameCard>().GetIsMatched() == false)
+            {
+                isGameOver = false;
+            }
         }
     }
 }
