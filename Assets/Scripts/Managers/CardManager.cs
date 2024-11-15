@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardManager : MonoBehaviour
+public class CardManager : MonoBehaviour, IDataPersistence
 {
     public static CardManager instance;
 
@@ -19,13 +19,53 @@ public class CardManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        cards = GameObject.FindGameObjectsWithTag("Card");
+    }
+
+    public void LoadData(GameData gameData)
+    {
+        for (int i = 0; i < gameData.idList.Count; i++)
+        {
+            for (int j = 0; j < cards.Length; j++)
+            {
+                Debug.Log(cards.Length);
+                gameData.gameCardsSymbolName.TryGetValue(gameData.idList[i], out cards[j].GetComponent<GameCard>().symbolName);
+                gameData.gameCardsMatched.TryGetValue(gameData.idList[i], out cards[j].GetComponent<GameCard>().isMatched);
+
+                if (cards[i].GetComponent<GameCard>().isMatched)
+                {
+                    cards[i].GetComponent<GameCard>().SetIsFlipped(cards[i].GetComponent<GameCard>().isMatched);
+                    cards[i].GetComponent<GameCard>().ShowCard();
+                    cards[i].GetComponent<GameCard>().DisableCard();
+                }
+            }
+
+        }
+    }
+
+    public void SaveData(ref GameData gameData)
+    {
+        foreach (GameObject card in cards)
+        {
+            if (gameData.gameCardsMatched.ContainsKey(card.GetComponent<GameCard>().id))
+            {
+                gameData.gameCardsMatched.Remove(card.GetComponent<GameCard>().id);
+                gameData.gameCardsSymbolName.Remove(card.GetComponent<GameCard>().symbolName);
+                gameData.idList.Remove(card.GetComponent<GameCard>().id);
+            }
+            gameData.gameCardsMatched.Add(card.GetComponent<GameCard>().id, card.GetComponent<GameCard>().isMatched);
+            gameData.gameCardsSymbolName.Add(card.GetComponent<GameCard>().id, card.GetComponent<GameCard>().symbolName);
+            gameData.idList.Add(card.GetComponent<GameCard>().id);
+        }
     }
 
     void Start()
     {
-        cards = GameObject.FindGameObjectsWithTag("Card");
-        GeneratePossiblePermutations();
-        AssignCardValues();
+        if (DataPersistenceManager.instance.gameData.CheckIsEmpty())
+        {
+            GeneratePossiblePermutations();
+            AssignCardValues();
+        }
 
         StartCoroutine(ShowCardsAtTheStartOfGame());
     }
@@ -55,6 +95,7 @@ public class CardManager : MonoBehaviour
                 Card cardData = cardPairs[i];
                 gameCard.SetSymbolName(cardData.symbol);
                 gameCard.SetFrontSprite(cardData.symbolSprite);
+                gameCard.id = System.Guid.NewGuid().ToString();
             }
         }
     }

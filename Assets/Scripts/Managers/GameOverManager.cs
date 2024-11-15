@@ -21,7 +21,7 @@ public class GameOverManager : MonoBehaviour
         ScoreManager.instance.HideScoreAndComboText();
 
         finalScoreText.text = ScoreManager.instance.GetScore().ToString();
-        longestComboStreak.text = ScoreManager.instance.GetTotalComboCount().ToString();
+        longestComboStreak.text = ScoreManager.instance.GetLongestComboStreak().ToString();
     }
 
     public void LoadMainMenu()

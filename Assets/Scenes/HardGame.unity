@@ -174,8 +174,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa824a40cfaafc4b97f9659a5f92dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
   backSprite: {fileID: -1469615698, guid: e957905cb4304b3468e6b0fe8c62a599, type: 3}
-  frontSprite: {fileID: 0}
+  symbolName: 
+  isMatched: 0
 --- !u!114 &25202080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,8 +447,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa824a40cfaafc4b97f9659a5f92dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
   backSprite: {fileID: -1469615698, guid: e957905cb4304b3468e6b0fe8c62a599, type: 3}
-  frontSprite: {fileID: 0}
+  symbolName: 
+  isMatched: 0
 --- !u!114 &107335184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -870,8 +874,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa824a40cfaafc4b97f9659a5f92dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
   backSprite: {fileID: -1469615698, guid: e957905cb4304b3468e6b0fe8c62a599, type: 3}
-  frontSprite: {fileID: 0}
+  symbolName: 
+  isMatched: 0
 --- !u!114 &340943495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -954,6 +960,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 340943492}
   m_CullTransparentMesh: 1
+--- !u!1 &390580603
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 390580604}
+  - component: {fileID: 390580605}
+  m_Layer: 0
+  m_Name: DataPersistenceManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &390580604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390580603}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1572855566}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &390580605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390580603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1389f381c8154343ac4d6b1838fb344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fileName: harddifficultysave.sino
+  gameData:
+    score: 0
+    longestComboStreak: 0
+    gameCardsMatched:
+      keys: []
+      values: 
+    gameCardsSymbolName:
+      keys: []
+      values: []
 --- !u!1 &426764745
 GameObject:
   m_ObjectHideFlags: 0
@@ -1312,8 +1372,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa824a40cfaafc4b97f9659a5f92dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
   backSprite: {fileID: -1469615698, guid: e957905cb4304b3468e6b0fe8c62a599, type: 3}
-  frontSprite: {fileID: 0}
+  symbolName: 
+  isMatched: 0
 --- !u!114 &556091320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1583,8 +1645,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa824a40cfaafc4b97f9659a5f92dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
   backSprite: {fileID: -1469615698, guid: e957905cb4304b3468e6b0fe8c62a599, type: 3}
-  frontSprite: {fileID: 0}
+  symbolName: 
+  isMatched: 0
 --- !u!114 &627264544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1719,8 +1783,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa824a40cfaafc4b97f9659a5f92dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
   backSprite: {fileID: -1469615698, guid: e957905cb4304b3468e6b0fe8c62a599, type: 3}
-  frontSprite: {fileID: 0}
+  symbolName: 
+  isMatched: 0
 --- !u!114 &666832592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1855,8 +1921,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa824a40cfaafc4b97f9659a5f92dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
   backSprite: {fileID: -1469615698, guid: e957905cb4304b3468e6b0fe8c62a599, type: 3}
-  frontSprite: {fileID: 0}
+  symbolName: 
+  isMatched: 0
 --- !u!114 &694829368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2117,7 +2185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fceec7275dd3ab4a924afbfa062cc7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card:
+  cardSymbols:
   - {fileID: 11400000, guid: 51b742a611c00e14e984ccd3b686d599, type: 2}
   - {fileID: 11400000, guid: 96d5fcc025824f145be75c75a1eebee8, type: 2}
   - {fileID: 11400000, guid: 63f774dd66e87c44bb372b3c29a3d3c5, type: 2}
@@ -2311,8 +2379,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa824a40cfaafc4b97f9659a5f92dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
   backSprite: {fileID: -1469615698, guid: e957905cb4304b3468e6b0fe8c62a599, type: 3}
-  frontSprite: {fileID: 0}
+  symbolName: 
+  isMatched: 0
 --- !u!114 &956977781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2447,8 +2517,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa824a40cfaafc4b97f9659a5f92dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
   backSprite: {fileID: -1469615698, guid: e957905cb4304b3468e6b0fe8c62a599, type: 3}
-  frontSprite: {fileID: 0}
+  symbolName: 
+  isMatched: 0
 --- !u!114 &997892112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2583,8 +2655,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa824a40cfaafc4b97f9659a5f92dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
   backSprite: {fileID: -1469615698, guid: e957905cb4304b3468e6b0fe8c62a599, type: 3}
-  frontSprite: {fileID: 0}
+  symbolName: 
+  isMatched: 0
 --- !u!114 &1049837213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3028,8 +3102,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa824a40cfaafc4b97f9659a5f92dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
   backSprite: {fileID: -1469615698, guid: e957905cb4304b3468e6b0fe8c62a599, type: 3}
-  frontSprite: {fileID: 0}
+  symbolName: 
+  isMatched: 0
 --- !u!114 &1268328695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3480,8 +3556,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa824a40cfaafc4b97f9659a5f92dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
   backSprite: {fileID: -1469615698, guid: e957905cb4304b3468e6b0fe8c62a599, type: 3}
-  frontSprite: {fileID: 0}
+  symbolName: 
+  isMatched: 0
 --- !u!114 &1415614338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3616,8 +3694,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa824a40cfaafc4b97f9659a5f92dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
   backSprite: {fileID: -1469615698, guid: e957905cb4304b3468e6b0fe8c62a599, type: 3}
-  frontSprite: {fileID: 0}
+  symbolName: 
+  isMatched: 0
 --- !u!114 &1422686956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3752,8 +3832,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa824a40cfaafc4b97f9659a5f92dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
   backSprite: {fileID: -1469615698, guid: e957905cb4304b3468e6b0fe8c62a599, type: 3}
-  frontSprite: {fileID: 0}
+  symbolName: 
+  isMatched: 0
 --- !u!114 &1554485481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3869,6 +3951,7 @@ Transform:
   - {fileID: 1366204286}
   - {fileID: 426764746}
   - {fileID: 178573550}
+  - {fileID: 390580604}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3924,8 +4007,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa824a40cfaafc4b97f9659a5f92dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
   backSprite: {fileID: -1469615698, guid: e957905cb4304b3468e6b0fe8c62a599, type: 3}
-  frontSprite: {fileID: 0}
+  symbolName: 
+  isMatched: 0
 --- !u!114 &1578510839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4113,8 +4198,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa824a40cfaafc4b97f9659a5f92dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
   backSprite: {fileID: -1469615698, guid: e957905cb4304b3468e6b0fe8c62a599, type: 3}
-  frontSprite: {fileID: 0}
+  symbolName: 
+  isMatched: 0
 --- !u!114 &1599951865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4249,8 +4336,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa824a40cfaafc4b97f9659a5f92dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
   backSprite: {fileID: -1469615698, guid: e957905cb4304b3468e6b0fe8c62a599, type: 3}
-  frontSprite: {fileID: 0}
+  symbolName: 
+  isMatched: 0
 --- !u!114 &1601401806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4385,8 +4474,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa824a40cfaafc4b97f9659a5f92dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
   backSprite: {fileID: -1469615698, guid: e957905cb4304b3468e6b0fe8c62a599, type: 3}
-  frontSprite: {fileID: 0}
+  symbolName: 
+  isMatched: 0
 --- !u!114 &1631587822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4521,8 +4612,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa824a40cfaafc4b97f9659a5f92dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
   backSprite: {fileID: -1469615698, guid: e957905cb4304b3468e6b0fe8c62a599, type: 3}
-  frontSprite: {fileID: 0}
+  symbolName: 
+  isMatched: 0
 --- !u!114 &1638568571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4736,8 +4829,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa824a40cfaafc4b97f9659a5f92dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
   backSprite: {fileID: -1469615698, guid: e957905cb4304b3468e6b0fe8c62a599, type: 3}
-  frontSprite: {fileID: 0}
+  symbolName: 
+  isMatched: 0
 --- !u!114 &1752265161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5073,8 +5168,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa824a40cfaafc4b97f9659a5f92dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
   backSprite: {fileID: -1469615698, guid: e957905cb4304b3468e6b0fe8c62a599, type: 3}
-  frontSprite: {fileID: 0}
+  symbolName: 
+  isMatched: 0
 --- !u!114 &1958293798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5209,8 +5306,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa824a40cfaafc4b97f9659a5f92dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
   backSprite: {fileID: -1469615698, guid: e957905cb4304b3468e6b0fe8c62a599, type: 3}
-  frontSprite: {fileID: 0}
+  symbolName: 
+  isMatched: 0
 --- !u!114 &2001653388
 MonoBehaviour:
   m_ObjectHideFlags: 0

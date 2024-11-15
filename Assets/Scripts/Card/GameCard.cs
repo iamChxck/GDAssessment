@@ -5,12 +5,14 @@ using UnityEngine.UI;
 
 public class GameCard : MonoBehaviour
 {
+    public string id;
+
     public Sprite backSprite;
 
-    string symbolName;
-    public Sprite frontSprite;
+    public string symbolName;
+    Sprite frontSprite;
     bool isFlipped = false;
-    bool isMatched = false;
+    public bool isMatched = false;
 
     Image image;
 
@@ -84,6 +86,11 @@ public class GameCard : MonoBehaviour
     public bool GetIsFlipped()
     {
         return isFlipped;
+    }
+
+    public void SetIsFlipped(bool _isFlipped)
+    {
+        isFlipped = _isFlipped;
     }
 
     public void DisableCard()

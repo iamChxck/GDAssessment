@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class ScoreManager : MonoBehaviour
+public class ScoreManager : MonoBehaviour, IDataPersistence
 {
     public static ScoreManager instance;
 
@@ -18,14 +18,26 @@ public class ScoreManager : MonoBehaviour
     int scoreComboMultiplier = 2;
 
     int currComboCount = 0;
-    int totalComboCount = 0;
+    int longestComboStreak = 0;
+    
+    int currentScore = 0;
 
     private void Awake()
     {
         instance = this;
     }
 
-    int currentScore = 0;
+    public void LoadData(GameData gameData)
+    {
+        this.currentScore = gameData.score;
+        this.longestComboStreak = gameData.longestComboStreak;
+    }
+
+    public void SaveData(ref GameData gameData)
+    {
+        gameData.score = this.currentScore;
+        gameData.longestComboStreak = this.longestComboStreak;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +53,7 @@ public class ScoreManager : MonoBehaviour
 
     public void UpdateTotalComboText()
     {
-        comboText.text = totalComboCount.ToString();
+        comboText.text = longestComboStreak.ToString();
     }
 
     public void AddScore(bool isCombo)
@@ -52,9 +64,9 @@ public class ScoreManager : MonoBehaviour
             UpdateScoreText();
 
             currComboCount++;
-            if (currComboCount > totalComboCount)
+            if (currComboCount > longestComboStreak)
             {
-                totalComboCount = currComboCount;
+                longestComboStreak = currComboCount;
             }
             AudioManager.instance.PlaySFX($"Combo{currComboCount}");
             UpdateTotalComboText();
@@ -78,8 +90,8 @@ public class ScoreManager : MonoBehaviour
         return currentScore;
     }
 
-    public int GetTotalComboCount()
+    public int GetLongestComboStreak()
     {
-        return totalComboCount;
+        return longestComboStreak;
     }
 }
