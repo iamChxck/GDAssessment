@@ -8,7 +8,7 @@ public class GameCard : MonoBehaviour
     public Sprite backSprite;
 
     string symbolName;
-    public Sprite frontSprite;
+    Sprite frontSprite;
     bool isFlipped = false;
     bool isMatched = false;
 

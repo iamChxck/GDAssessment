@@ -10,11 +10,9 @@ public class CardManager : MonoBehaviour
 
     int possiblePermutations = 0;
 
-    [SerializeField]
-    GameObject panelCover;
+    [SerializeField] GameObject panelCover;
 
-    [SerializeField]
-    List<Card> cardSymbols;
+    [SerializeField] List<Card> cardSymbols;
 
     private void Awake()
     {
@@ -53,7 +51,7 @@ public class CardManager : MonoBehaviour
             if (gameCard != null)
             {
                 Card cardData = cardPairs[i];
-                gameCard.SetSymbolName(cardData.symbol);
+                gameCard.SetSymbolName(cardData.symbolName);
                 gameCard.SetFrontSprite(cardData.symbolSprite);
             }
         }

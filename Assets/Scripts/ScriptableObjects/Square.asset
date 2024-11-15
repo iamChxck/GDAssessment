@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e58bbff6fd5c3ed4fb5333971560d05d, type: 3}
   m_Name: Square
   m_EditorClassIdentifier: 
-  symbol: Square
+  symbolName: Square
   symbolSprite: {fileID: 411686477, guid: e957905cb4304b3468e6b0fe8c62a599, type: 3}

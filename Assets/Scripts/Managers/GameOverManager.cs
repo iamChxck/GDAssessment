@@ -18,7 +18,7 @@ public class GameOverManager : MonoBehaviour
     {
         gameOverPanel.SetActive(true);
         backButton.SetActive(false);
-        ScoreManager.instance.HideScoreAndComboText();
+        GameUIManager.instance.HideScoreAndComboText();
 
         finalScoreText.text = ScoreManager.instance.GetScore().ToString();
         longestComboStreak.text = ScoreManager.instance.GetTotalComboCount().ToString();
@@ -28,6 +28,6 @@ public class GameOverManager : MonoBehaviour
     {
         AudioManager.instance.StopMusic();
         AudioManager.instance.PlaySFX("ButtonClick");
-        SceneManager.LoadScene("MainMenu");
+        StartCoroutine(TransitionPanel.instance.StartTransitionPanelAnimation("MainMenu"));
     }
 }

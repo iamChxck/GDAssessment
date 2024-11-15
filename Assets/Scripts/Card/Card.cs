@@ -5,6 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="New Card", menuName ="Card")]
 public class Card : ScriptableObject
 {
-    public string symbol;
+    public string symbolName;
     public Sprite symbolSprite;
 }

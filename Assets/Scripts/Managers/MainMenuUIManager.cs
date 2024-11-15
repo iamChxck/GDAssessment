@@ -54,7 +54,7 @@ public class MainMenuUIManager : MonoBehaviour
         AudioManager.instance.PlaySFX("ButtonClick");
         AudioManager.instance.StopMusic();
 
-        SceneManager.LoadScene(DifficultyManager.instance.difficultySelected.ToString());
+        StartCoroutine(TransitionPanel.instance.StartTransitionPanelAnimation(DifficultyManager.instance.difficultySelected.ToString()));
     }
 
     void ToggleSettingsPanel()

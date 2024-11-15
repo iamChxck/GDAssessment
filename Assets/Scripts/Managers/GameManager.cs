@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour
             ScoreManager.instance.AddScore(isCombo);
             isCombo = true;
             AudioManager.instance.PlaySFX("CardMatch");
+
             return;
         }
 
@@ -105,5 +106,12 @@ public class GameManager : MonoBehaviour
                 isGameOver = false;
             }
         }
+    }
+
+    public void LoadMainMenu()
+    {
+        AudioManager.instance.StopMusic();
+        AudioManager.instance.PlaySFX("ButtonClick");
+        StartCoroutine(TransitionPanel.instance.StartTransitionPanelAnimation("MainMenu"));
     }
 }

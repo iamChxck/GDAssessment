@@ -14,11 +14,10 @@ public class CardGenerator : MonoBehaviour
         }
     }
 
-    [SerializeField]
-    private Card[] card;
+    [SerializeField] private Card[] cardSymbols;
 
     public Card GenerateCard()
     {
-       return card[Random.Range(0, card.Length)];
+       return cardSymbols[Random.Range(0, cardSymbols.Length)];
     }
 }
